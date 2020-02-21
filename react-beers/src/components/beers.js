@@ -23,24 +23,27 @@ class Beers extends React.Component {
       }
 
     render (){
-        return (
-            <div className="Beers">
-                <h2>Beers page</h2>
-                <Link to={'/'}><Header /></Link> 
+      return (
+        <div className="Beers">
+          <Link to={'/'}><Header /></Link> 
 
-            { this.state.beers.map( beer => {
-                return (
-                <div key={beer._id}>
-                <Link to={`/beers/${beer._id}`}>
-                  <h3>{beer.name}</h3>
-                </Link>
+          { this.state.beers.map( beer => {
+            return (
+              <Link to={`/beers/${beer._id}`} style={{ textDecoration: 'none' }} key={beer._id}>
+                <div className="beerBox" >
+                  <div className="imgBeer"><img src={beer.image_url} alt="pictureBeer" /></div>
+                  <div className="infoBeer">
+                    <h1>{beer.name}</h1>
+                    <h2>{beer.tagline}</h2>
+                    <h3>Created by: {beer.contributed_by}</h3>
+                  </div>
                 </div>
-             )})
-            }
-            </div>
-        );
+              </Link>
+            )
+          })}
+        </div>
+      );
     }
-
 }
 
 export default Beers;

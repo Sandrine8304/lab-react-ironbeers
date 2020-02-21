@@ -61,6 +61,37 @@
   width: 100%;
 }
 
-.Section h2 {
+.Beers {
+  margin-left: 31.5%;
+  margin-right: 31.5%;
 
 }
+
+.beerBox {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgb(170, 169, 169);
+}
+
+.imgBeer {
+  flex: 30%;
+}
+
+.imgBeer img {
+  display: block;
+  height: 6em;
+  margin-left: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.infoBeer {
+  flex: 70%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+}
+
+
+
+
