@@ -1,18 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
+import Header from './header';
 
 class RandomBeer extends React.Component {
-    render () {
-        return (
-            <div className="RandomBeer">
-                <h2>RandomBeer page</h2>
-            </div>
-
-        );
+    
+    state = {
+        beer : {}
+    }
+    
+    getRandomBeer = () => {
+        let idBeer = this.props.match.params.id;
+        axios.get(`https://ih-beer-api.herokuapp.com/beers/random`)
+          .then(responseFromApi => {
+            let oneBeer = responseFromApi.data
+            this.setState({beer: oneBeer})
+            console.log("response:", oneBeer)
+          })
+          .catch(err => console.log('Error', err))
+    }
+    
+    componentDidMount() {
+        this.getRandomBeer();
     }
 
+    render () {
+        return (
+        <div className="RandomBeerPage">
+            <Link to={'/'}><Header /></Link> 
+            <div className="RandomBeer">
+                <img src={this.state.beer.image_url} />
+                <h2>{this.state.beer.name}</h2>
+                <h2>{this.state.beer.tagline}</h2>
+                <h2>{this.state.beer.first_brewed}</h2>
+                <h2>{this.state.beer.attenuation_level}</h2>
+                <h2>{this.state.beer.description}</h2>
+                <h2>{this.state.beer.contributed_by}</h2>
+            </div>
+        </div>
+        );
+    }
 }
 
 export default RandomBeer;

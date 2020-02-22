@@ -92,6 +92,33 @@
   margin-left: 2em;
 }
 
+.SingleBeer {
+
+  margin-left: 25%;
+  margin-right: 25%;
+  
+}
+
+.SingleBeer img {
+  display: block;
+  height: 10em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.RandomBeer {
+
+  margin-left: 25%;
+  margin-right: 25%;
+  
+}
+
+.RandomBeer img {
+  display: block;
+  height: 10em;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
