@@ -28,7 +28,7 @@ class RandomBeer extends React.Component {
         <div className="RandomBeerPage">
             <Link to={'/'}><Header /></Link> 
             <div className="RandomBeer">
-                <img src={this.state.beer.image_url} />
+                <img src={this.state.beer.image_url} alt=""/>
                 <h2>{this.state.beer.name}</h2>
                 <h2>{this.state.beer.tagline}</h2>
                 <h2>{this.state.beer.first_brewed}</h2>

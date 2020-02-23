@@ -26,13 +26,21 @@ class NewBeer extends React.Component {
     }
 
     handleFormSubmit = (event) => {
-        event.preventDefault(); // Prevent page refresh
-    
-        // Call axios to save new beer
-        // this.AddBeer(this.state); 
-    
-        // RESET
-        this.setState({
+        event.preventDefault();
+        
+        const name = this.state.name;
+        const tagline = this.state.tagline;
+        const description = this.state.description;
+        const first_brewed = this.state.first_brewed;
+        const brewers_tips = this.state.brewers_tips;
+        const attenuation_level = this.state.attenuation_level;
+        const contributed_by = this.state.contributed_by;
+
+        axios.post("https://ih-beer-api.herokuapp.com/beers/new", { name, tagline, description, first_brewed, brewers_tips, attenuation_level, contributed_by })
+        .then(() => {
+            alert('Beer has been successfully added !!!')
+            // Reset form
+            this.setState({
             name: '',
             tagline: '',
             description: '',
@@ -40,24 +48,10 @@ class NewBeer extends React.Component {
             brewers_tips: '',
             attenuation_level : '',
             contributed_by: '' 
-        })  
-    }
-
-    AddBeer = () => {
-        const beer = this.state;
-        axios.post(`https://ih-beer-api.herokuapp.com/beers/new`)
-          .then(responseFromApi => {
-            responseFromApi.data.push(beer)
-            console.log(beer)
-          })
-          .catch(err => console.log('Error', err))
-    }
-    
-    componentDidMount() {
-        this.AddBeer(this.state);
-    }
-
-     
+            })  
+        })
+        .catch(error => console.log(error))
+    }   
 
     render () {
         return (
