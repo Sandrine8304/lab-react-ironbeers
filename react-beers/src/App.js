@@ -7,8 +7,6 @@ import RandomBeer from './components/random-beer';
 import NewBeer from './components/new-beer';
 import SingleBeer from './components/single-beer';
 
-
-
 class App extends React.Component {
 
   render () {

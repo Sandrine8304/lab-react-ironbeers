@@ -4,9 +4,7 @@ import beers from './beers.png';
 import randomBeer from './random-beer.png';
 import newBeer from './new-beer.png';
 import { Link } from 'react-router-dom';
-import Beers from './beers';
-import RandomBeer from './random-beer';
-import NewBeer from './new-beer';
+
 
 
 

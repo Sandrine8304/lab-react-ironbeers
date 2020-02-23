@@ -10,7 +10,6 @@ class RandomBeer extends React.Component {
     }
     
     getRandomBeer = () => {
-        let idBeer = this.props.match.params.id;
         axios.get(`https://ih-beer-api.herokuapp.com/beers/random`)
           .then(responseFromApi => {
             let oneBeer = responseFromApi.data

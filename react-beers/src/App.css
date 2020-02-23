@@ -93,7 +93,6 @@
 }
 
 .SingleBeer {
-
   margin-left: 25%;
   margin-right: 25%;
   
@@ -118,6 +117,51 @@
   height: 10em;
   margin-left: auto;
   margin-right: auto;
+}
+
+.formNewBeer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 31.5%;
+  margin-right: 31.5%;
+
+}
+
+.formNewBeer label {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1em;
+  padding-left: 1em;
+  text-align: left;
+  width: 60%;
+  font-weight: bold;
+}
+
+.formNewBeer input {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1em;
+  padding-left: 1em;
+  text-align: left;
+  width: 60%;
+  margin-bottom: 1.5em;
+  border: 1px solid rgb(230, 232, 220);
+  border-radius: 8px;
+  /* height: 2em; */
+}
+
+.description {
+  height: 6em;
+}
+
+.formNewBeer button {
+  margin-left: auto;
+  margin-right: auto;
+  width: 61%;
+  background-color: #3DC4FC;
+  border: 1px solid #3DC4FC;
+  border-radius: 8px;
+  color: white;
 }
 
 
